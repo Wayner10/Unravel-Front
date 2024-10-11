@@ -1,0 +1,466 @@
+
+/* - - - </> [SECTION] </> - - - */
+.footer-section
+{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    color: var(--color_001);
+    background: var(--color_002);
+}
+
+/* - - - </> - - - </> - - - </> [COL] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [COL] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [COL] </> - - - </> - - - </> - - - */
+
+/* - - - </> [DIV] </> - - - */
+.footer-lf-lg-col
+{
+    display: flex;
+    padding: 0px 40px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* - - - </> - - - </> - - - </> [LOGO] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [LOGO] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [LOGO] </> - - - </> - - - </> - - - */
+
+/* - - - </> [DIV] </> - - - */
+.footer-logo-wrapper
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* - - - </> [IMG] </> - - - */
+.footer-logo
+{
+    width: auto;
+    height: 50px;
+}
+
+/* - - - </> [ICON] </> - - - */
+.footer-logo-icon
+{
+    font-size: 50px;
+}
+
+/* - - - </> [LINE] </> - - - */
+.footer-line
+{
+    width: 100%;
+    height: 2px;
+    background: var(--color_001);
+}
+
+/* - - - </> - - - </> - - - </> [TEXT] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [TEXT] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [TEXT] </> - - - </> - - - </> - - - */
+
+/* - - - </> [DIV] </> - - - */
+.footer-text-wrapper
+{
+    width: 100%;
+}
+
+/* - - - </> [TEXT] </> - - - */
+.footer-title
+{
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* - - - </> [TEXT] </> - - - */
+.footer-text
+{
+    font-size: 14px;
+}
+
+/* - - - </> - - - </> - - - </> [INFO] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [INFO] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [INFO] </> - - - </> - - - </> - - - */
+
+/* - - - </> [DIV] </> - - - */
+.footer-info-wrapper
+{
+    gap: 20px;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* - - - </> [DIV] </> - - - */
+.footer-info-v1
+{
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+}
+
+/* - - - </> [DIV] </> - - - */
+.footer-info-v2
+{
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+}
+
+/* - - - </> [TEXT] </> - - - */
+.footer-info-title
+{
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* - - - </> [SPAN] </> - - - */
+.footer-info-link
+{
+    display: flex;
+    align-items: center;
+}
+
+/* - - - </> [ICON] </> - - - */
+.footer-info-icon
+{
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+/* - - - </> [ICON] </> - - - */
+.footer-info-text
+{
+    font-size: 14px;
+}
+
+/* - - - </> - - - </> - - - </> [LINK] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [LINK] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [LINK] </> - - - </> - - - </> - - - */
+
+/* - - - </> [DIV] </> - - - */
+.footer-social-wrapper
+{
+    width: 100%;
+}
+
+/* - - - </> [TEXT] </> - - - */
+.footer-social-title
+{
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* - - - </> [DIV] </> - - - */
+.footer-social
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* - - - </> [SPAN] </> - - - */
+.footer-social-item
+{
+    display: flex;
+    align-items: center;
+}
+
+/* - - - </> [ICON] </> - - - */
+.footer-social-icon
+{
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+/* - - - </> [TEXT] </> - - - */
+.footer-social-link
+{
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--color_001);
+}
+
+/* - - - </> [TEXT] </> - - - */
+.footer-copyright
+{
+    font-size: 14px;
+    text-align: right;
+}
+
+/* - - - </> [TEXT] </> - - - */
+.footer-copyright span
+{
+    font-weight: 700;
+}
+
+/* - - - </> - - - </> - - - </> [COL] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [COL] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [COL] </> - - - </> - - - </> - - - */
+
+/* - - - </> [DIV] </> - - - */
+.footer-rg-lg-col
+{
+    display: flex;
+    padding: 0px 40px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* - - - </> - - - </> - - - </> [TEXT] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [TEXT] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [TEXT] </> - - - </> - - - </> - - - */
+
+/* - - - </> [TEXT] </> - - - */
+.footer-contact-title-v1
+{
+    margin: 0;
+    font-size: 40px;
+    line-height: 100%;
+}
+
+/* - - - </> [TEXT] </> - - - */
+.footer-contact-title-v2
+{
+    margin: 0;
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 100%;
+}
+
+/* - - - </> - - - </> - - - </> [FORM] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [FORM] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [FORM] </> - - - </> - - - </> - - - */
+
+/* - - - </> [FORM] </> - - - */
+.footer-form
+{
+    gap: 20px;
+    display: grid;
+    grid-template-rows: repeat(6, 50px);
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* - - - </> [INPUT] </> - - - */
+#contact-name
+{
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+}
+
+/* - - - </> [INPUT] </> - - - */
+#contact-lastname
+{
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+}
+
+/* - - - </> [INPUT] </> - - - */
+#contact-title
+{
+    grid-row: 2 / 3;
+    grid-column: 1 / 3;
+}
+
+/* - - - </> [INPUT] </> - - - */
+#contact-message
+{
+    grid-row: 3 / 6;
+    grid-column: 1 / 3;
+}
+
+/* - - - </> [BUTTON] </> - - - */
+#contact-button-v1
+{
+    grid-row: 6 / 7;
+    grid-column: 1 / 2;
+}
+
+/* - - - </> [BUTTON] </> - - - */
+#contact-button-v2
+{
+    grid-row: 6 / 7;
+    grid-column: 2 / 3;
+}
+
+/* - - - </> - - - </> - - - </> [INPUT] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [INPUT] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [INPUT] </> - - - </> - - - </> - - - */
+
+/* - - - </> [DIV] </> - - - */
+.form-input-wrapper
+{
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+/* - - - </> [ICON] </> - - - */
+.form-input-icon
+{
+    left: 20px;
+    font-size: 20px;
+    position: absolute;
+    color: var(--color_001);
+}
+
+/* - - - </> [ICON] </> - - - */
+.form-textarea-icon
+{
+    top: 15%;
+    left: 20px;
+    font-size: 20px;
+    position: absolute;
+    box-sizing: border-box;
+    color: var(--color_001);
+    transform: translateY(-50%);
+}
+
+/* - - - </> [INPUT] </> - - - */
+.form-input
+{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    font-size: 14px;
+    background: none;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: var(--color_001);
+    -moz-box-sizing: border-box;
+    padding: 20px 20px 20px 60px;
+    -webkit-box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    border: 2px solid var(--color_001);
+}
+
+/* - - - </> - - - </> - - - </> [BUTTON] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [BUTTON] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [BUTTON] </> - - - </> - - - </> - - - */
+
+/* - - - </> [BUTTON] </> - - - */
+.form-button-v1
+{
+    display: flex;
+    background: none;
+    position: relative;
+    border-radius: 8px;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: center;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 2px solid var(--color_001);
+}
+
+/* - - - </> [ICON] </> - - - */
+.form-button-icon-v1
+{
+    left: 20px;
+    font-size: 20px;
+    position: absolute;
+    color: var(--color_001);
+}
+
+/* - - - </> [TEXT] </> - - - */
+.form-button-text-v1
+{
+    font-size: 14px;
+    font-weight: 900;
+    color: var(--color_001);
+}
+
+/* - - - </> [BUTTON] </> - - - */
+.form-button-v2
+{
+    display: flex;
+    background: none;
+    position: relative;
+    border-radius: 8px;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: center;
+    background: var(--color_001);
+}
+
+/* - - - </> [ICON] </> - - - */
+.form-button-icon-v2
+{
+    right: 20px;
+    font-size: 20px;
+    position: absolute;
+    color: var(--color_002);
+}
+
+/* - - - </> [TEXT] </> - - - */
+.form-button-text-v2
+{
+    font-size: 14px;
+    font-weight: 900;
+    color: var(--color_002);
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px)
+{
+    /* - - - </> [DIV] </> - - - */
+    .footer-info-v1,
+    #contact-name
+    {
+        grid-row: 1 / 2;
+        grid-column: 1 / 3;
+    }
+
+    /* - - - </> [DIV] </> - - - */
+    .footer-info-v2,
+    #contact-lastname
+    {
+        grid-row: 2 / 3;
+        grid-column: 1 / 3;
+    }
+
+    /* - - - </> [FORM] </> - - - */
+    .footer-form
+    {
+        grid-template-rows: repeat(7, 50px);
+    }
+
+    /* - - - </> [BUTTON] </> - - - */
+    #contact-button-v1
+    {
+        grid-row: 6 / 7;
+        grid-column: 1 / 3;
+    }
+
+    /* - - - </> [BUTTON] </> - - - */
+    #contact-button-v2
+    {
+        grid-row: 7 / 8;
+        grid-column: 1 / 3;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and down) */
+@media only screen and (max-width: 768px)
+{
+
+}
+
+/* Large devices (laptops/desktops, 992px and down) */
+@media only screen and (max-width: 992px)
+{
+    /* - - - </> [SECTION] </> - - - */
+    .footer-section
+    {
+        height: auto;
+        flex-direction: column;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and down) */
+@media only screen and (max-width: 1200px)
+{
+    
+}
