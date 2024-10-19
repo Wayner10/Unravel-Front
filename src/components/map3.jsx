@@ -53,7 +53,7 @@ function Map(props) {
       <p>Longitud: {position.lng}</p>
     
       {/* Cargar Google Map con API Key y Map ID */}
-      <LoadScript googleMapsApiKey="AIzaSyDjBY_AhQBJzbKlxA9695hUepkwPQYTYLQ&beta">
+      <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
         <GoogleMap
           mapContainerStyle={containerStyle}
           center={position}
