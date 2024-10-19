@@ -3,12 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
     "@iconify/react": "^5.0.2",
+=======
+    "@react-google-maps/api": "^2.20.3",
+>>>>>>> f43dac2a04b32506aa8094ef30c3381d2669d6fd
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.7.7",
+    "leaflet": "^1.9.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+<<<<<<< HEAD
+=======
+    "react-leaflet": "^4.2.1",
+>>>>>>> f43dac2a04b32506aa8094ef30c3381d2669d6fd
     "react-router-dom": "^6.26.2",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
