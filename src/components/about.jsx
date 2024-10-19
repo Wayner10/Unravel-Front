@@ -11,11 +11,7 @@ const About = () => {
       <div className="content">
         <p>
           Somos una empresa dedicada a brindar soluciones innovadoras y de
-<<<<<<< HEAD
-          calidad en el ámbito de la tecnología. Nuestro equipo de expertos está
-=======
           calidad en el ámbito de turismo. Nuestro equipo de expertos está
->>>>>>> f43dac2a04b32506aa8094ef30c3381d2669d6fd
           comprometido en ofrecer servicios que superen las expectativas de
           nuestros clientes.
         </p>
