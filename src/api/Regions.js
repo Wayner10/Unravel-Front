@@ -8,7 +8,7 @@ export default class Regions
         try
         {
             //* - - - </> [URL] </> - - - *//
-            const { data } = (await axios.get('http://localhost:4000/api/regions'));
+            const { data } = (await axios.get('http://localhost:5000/api/regions'));
             return data;
         }
         catch (error)

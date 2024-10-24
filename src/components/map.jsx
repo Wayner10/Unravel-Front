@@ -20,7 +20,7 @@ function MapComponent(props) {
 
   // Cargar los datos de los lugares desde la API
   useEffect(() => {
-    fetch("http://localhost:4000/api/places")
+    fetch("http://localhost:5000/api/places")
       .then((response) => response.json())
       .then((data) => {
         setPlaces(data);
