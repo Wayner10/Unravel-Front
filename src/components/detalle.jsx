@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"; // Importar useParams
+import '../styles/detalle.css';
 
 function Detalle() {
   const { placeId } = useParams(); // Obtener el parámetro de la URL
@@ -14,10 +15,10 @@ function Detalle() {
   }, [placeId]);
 
   return (
-    <div>
+    <div className="detalle">
       {placeDetail ? (
         <>
-          <h2>{placeDetail.place_name}</h2>
+          <h2 className="h2-detalle">{placeDetail.place_name}</h2>
           <p><strong>Descripción:</strong> {placeDetail.place_desc}</p>
           <p><strong>Puntuación:</strong> {placeDetail.place_score}</p>
           <p><strong>Precio Adulto:</strong> {placeDetail.place_price_adult}</p>
@@ -41,6 +42,17 @@ function Detalle() {
           </p>
           <p><strong>Hora de Apertura:</strong> {placeDetail.place_open_time}</p>
           <p><strong>Hora de Cierre:</strong> {placeDetail.place_close_time}</p>
+          
+          {/* Mostrar la imagen si se proporciona una URL */}
+          {placeDetail.place_image_url && ( // Asegúrate de que esta propiedad exista en el objeto placeDetail
+            <div style={{ marginTop: '10px' }}>
+              <img 
+                src={placeDetail.place_image_url} 
+                alt="Imagen del lugar" 
+                style={{ maxWidth: '100%', height: 'auto' }} 
+              />
+            </div>
+          )}
         </>
       ) : (
         <p>Cargando detalles...</p>

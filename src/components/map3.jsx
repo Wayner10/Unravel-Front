@@ -53,18 +53,27 @@ function Map(props) {
       <p>Longitud: {position.lng}</p>
     
       {/* Cargar Google Map con API Key y Map ID */}
-      <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
+      <LoadScript googleMapsApiKey="AIzaSyDjBY_AhQBJzbKlxA9695hUepkwPQYTYLQ">
         <GoogleMap
           mapContainerStyle={containerStyle}
           center={position}
-          zoom={11}
+          zoom={9}
           options={{
-            restriction: {
-              latLngBounds: { north: 11.22,  // Latitud norte de Costa Rica
-                south: 5.57,   // Latitud sur de Costa Rica
-                east: -82.68,  // Longitud este de Costa Rica
-                west: -85.73,  // Longitud oeste de Costa Rica\
-              },
+            // restriction: {
+            //   latLngBounds: {
+            //     north: 11.20,   // Latitud norte de Guanacaste
+            //     south: 9.80,    // Latitud sur de Guanacaste
+            //     east: -84.75,   // Longitud este de Guanacaste
+            //     west: -86.15    // Longitud oeste de Guanacaste
+            //   },
+
+              restriction: {
+                latLngBounds: {
+                  north: 10.15,  // Latitud norte del Pacífico Central
+                  south: 8.40,   // Latitud sur del Pacífico Central
+                  east: -84.10,  // Longitud este del Pacífico Central
+                  west: -85.00   // Longitud oeste del Pacífico Central
+                },
               strictBounds: true
             }
           }} // Pasamos el mapId y otras opciones aquí

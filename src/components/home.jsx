@@ -22,7 +22,6 @@ function Home() {
     getData();
   }, [getData]);  // Añadimos getData a la lista de dependencias para evitar advertencias de ESLint
 
-  console.log(regions); // Imprime las regiones en la consola para verificación
 
   //* - - - </> [LINK] </> - - - *//
   const seeMore = (id) => {

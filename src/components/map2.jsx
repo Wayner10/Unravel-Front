@@ -47,7 +47,7 @@ const Map = () => {
 
     // Load the script
     const googleMapScript = document.createElement('script');
-    googleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&callback=initMap&v=weekly&solution_channel=GMP_CCS_simplepolygon_v2`;
+    googleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyDjBY_AhQBJzbKlxA9695hUepkwPQYTYLQ&callback=initMap&v=weekly&solution_channel=GMP_CCS_simplepolygon_v2`;
     googleMapScript.async = true;
     window.document.body.appendChild(googleMapScript);
     

@@ -5,3 +5,9 @@
     position: relative;
     z-index: 1;
 }
+
+.info-window-title{
+    font-size: 14px;
+    line-height: 100%;
+    margin: 0;
+}
