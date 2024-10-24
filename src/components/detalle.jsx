@@ -8,7 +8,7 @@ function Detalle() {
 
   // Fetch de los detalles del lugar basado en el nombre
   useEffect(() => {
-    fetch(`http://localhost:5000/api/places/${placeId}`)
+    fetch(`http://localhost:4000/api/places/${placeId}`)
       .then((response) => response.json())
       .then((data) => setPlaceDetail(data))
       .catch((error) => console.error("Error fetching data:", error));
