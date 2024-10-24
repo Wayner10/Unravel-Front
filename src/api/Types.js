@@ -8,7 +8,7 @@ export default class Types
         try
         {
             //* - - - </> [URL] </> - - - *//
-            const { data } = (await axios.get('http://localhost:5000/api/place-types'));
+            const { data } = (await axios.get('http://localhost:4000/api/place-types'));
             return data;
         }
         catch (error)
@@ -25,7 +25,7 @@ export default class Types
         try
         {
             //* - - - </> [URL] </> - - - *//
-            const { data } = await axios.get(`http://localhost:5000/api/place-types/${id}`);
+            const { data } = await axios.get(`http://localhost:4000/api/place-types/${id}`);
             return data;
         }
         catch (error)
@@ -42,7 +42,7 @@ export default class Types
         try
         {
             //* - - - </> [URL] </> - - - *//
-            const response = await axios.post('http://localhost:5000/api/place-types', data);
+            const response = await axios.post('http://localhost:4000/api/place-types', data);
             console.log(response);
             return response.data;
         }
@@ -60,7 +60,7 @@ export default class Types
         try
         {
             //* - - - </> [URL] </> - - - *//
-            await axios.put(`http://localhost:5000/api/place-types/${id}`, data);
+            await axios.put(`http://localhost:4000/api/place-types/${id}`, data);
             return {status: 200, message: 'Content updated successfully!'};
         }
         catch(error)
@@ -77,7 +77,7 @@ export default class Types
         try
         {
             //* - - - </> [URL] </> - - - *//
-            await axios.delete(`http://localhost:5000/api/place-types/${id}`);
+            await axios.delete(`http://localhost:4000/api/place-types/${id}`);
             return {status: 200, message: 'Content removed successfully!'};
         }
         catch(error)
