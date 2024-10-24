@@ -145,7 +145,6 @@ function MapComponent(props) {
               // Asegúrate de que siempre devuelves algo
               return null; // Devolver null si las condiciones no se cumplen
             })}{" "}
-            cuando se selecciona un lugar */}
             {selectedPlace && (
               <InfoWindow
                 headerContent={
