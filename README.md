@@ -68,3 +68,21 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+<!-- COMANDOS -->
+
+<!-- REACT-ROUTER-DOM -->
+npm i react-router-dom
+
+<!-- AXIOS -->
+npm i axios
+
+<!--@vis.gl/react-google-maps-->
+npm install @vis.gl/react-google-maps
+
+<!-- Requiere-Context -->
+npm i require-context
+
+<!-- ICONIFY-REACT -->
+npm i @iconify/react

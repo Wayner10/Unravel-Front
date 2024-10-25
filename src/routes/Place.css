@@ -1,0 +1,251 @@
+
+/* - - - </> [SECTION] </> - - - */
+.place-wrapper
+{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* - - - </> - - - </> - - - </> [IMG] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [IMG] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [IMG] </> - - - </> - - - </> - - - */
+
+/* - - - </> [DIV] </> - - - */
+.place-gallery
+{
+    gap: 10px;
+    width: 80%;
+    display: grid;
+    margin-bottom: 40px;
+    grid-template-rows: repeat(2, 250px);
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* - - - </> [DIV] </> - - - */
+.place-gallery > *:first-child
+{
+    grid-row: 1 / 3;
+    grid-column: 1 / 3;
+}
+
+/* - - - </> [DIV] </> - - - */
+.place-image-wrapper
+{
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    background: var(--color_002);
+}
+
+/* - - - </> [ICON] </> - - - */
+.place-image-icon
+{
+    top: 20px;
+    right: 20px;
+    font-size: 25px;
+    user-select: none;
+    position: absolute;
+    pointer-events: none;
+    color: var(--color_001);
+}
+
+/* - - - </> - - - </> - - - </> [ABOUT] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [ABOUT] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [ABOUT] </> - - - </> - - - </> - - - */
+
+/* - - - </> [DIV] </> - - - */
+.place-about
+{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* - - - </> [DIV] </> - - - */
+.place-about-wrapper
+{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* - - - </> [DIV] </> - - - */
+.place-about-line
+{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 1px;
+    border: none;
+    user-select: none;
+    margin-bottom: 10px;
+    pointer-events: none;
+    background: var(--color_002);
+}
+
+/* - - - </> [TEXT] </> - - - */
+.place-about-title
+{
+    margin: 0;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 100%;
+    user-select: none;
+    margin-bottom: 10px;
+    pointer-events: none;
+    color: var(--color_002);
+    font-family: 'Tan-Pearl';
+}
+
+/* - - - </> [SPAN] </> - - - */
+.place-about-span
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* - - - </> [ICON] </> - - - */
+.place-about-icon
+{
+    font-size: 25px;
+    user-select: none;
+    margin-right: 10px;
+    pointer-events: none;
+    color: var(--color_002);
+}
+
+/* - - - </> [TEXT] </> - - - */
+.place-about-text
+{
+    margin: 0;
+    font-size: 16px;
+    line-height: 100%;
+    user-select: none;
+    pointer-events: none;
+    color: var(--color_002);
+}
+
+/* - - - </> - - - </> - - - </> [SCORE] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [SCORE] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [SCORE] </> - - - </> - - - </> - - - */
+
+/* - - - </> [SPAN] </> - - - */
+.place-score
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+
+/* - - - </> [DIV] </> - - - */
+.place-score-wrapper
+{
+    display: flex;
+    align-items: center;
+}
+
+/* - - - </> [ICON] </> - - - */
+.place-score-icon-v1
+{
+    font-size: 25px;
+    user-select: none;
+    margin-right: 20px;
+    pointer-events: none;
+    color: var(--color_002);
+}
+
+/* - - - </> [ICON] </> - - - */
+.place-score-icon-v2
+{
+    opacity: .2;
+    font-size: 25px;
+    user-select: none;
+    margin-right: 20px;
+    pointer-events: none;
+    color: var(--color_002);
+}
+
+/* - - - </> [TEXT] </> - - - */
+.place-about-status
+{
+    margin: 0;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 100%;
+    user-select: none;
+    pointer-events: none;
+    color: var(--color_002);
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px)
+{
+
+}
+
+/* Medium devices (landscape tablets, 768px and down) */
+@media only screen and (max-width: 768px)
+{
+
+}
+
+/* Large devices (laptops/desktops, 992px and down) */
+@media only screen and (max-width: 992px)
+{
+    /* - - - </> [DIV] </> - - - */
+    .place-gallery
+    {
+        width: 100%;
+        grid-template-rows: 250px;
+        grid-template-columns: 1fr;
+    }
+
+    /* - - - </> [DIV] </> - - - */
+    .place-gallery > *:first-child
+    {
+        grid-row: 1 / 3;
+        grid-column: 1 / 2;
+    }
+
+    /* - - - </> [DIV] </> - - - */
+    .place-gallery > *:not(:first-child)
+    {
+        display: none;
+    }
+    
+    /* - - - </> [SECTION] </> - - - */
+    .place-wrapper
+    {
+        height: auto;
+    }
+
+    /* - - - </> [DIV] </> - - - */
+    .place-about
+    {
+        flex-direction: column;
+    }
+
+    /* - - - </> [DIV] </> - - - */
+    .place-about-wrapper
+    {
+        width: 100%;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and down) */
+@media only screen and (max-width: 1200px)
+{
+
+}

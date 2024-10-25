@@ -1,0 +1,90 @@
+/* - - - </> - - - </> - - - </> [MAP] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [MAP] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [MAP] </> - - - </> - - - </> - - - */
+
+/* - - - </> [DIV] </> - - - */
+.main-wrapper
+{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* - - - </> - - - </> - - - </> [TOGGLE] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [TOGGLE] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [TOGGLE] </> - - - </> - - - </> - - - */
+
+/* - - - </> [DIV] </> - - - */
+.toggle
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* - - - </> [DIV] </> - - - */
+.toggle-title
+{
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 100%;
+    user-select: none;
+    pointer-events: none;
+    color: var(--color_002);
+}
+
+/* - - - </> [SPAN] </> - - - */
+.toggle-span
+{
+    display: flex;
+    margin-bottom: 5px;
+    align-items: center;
+}
+
+/* - - - </> [SPAN] </> - - - */
+.toggle-icon
+{
+    font-size: 14px;
+    user-select: none;
+    margin-right: 5px;
+    pointer-events: none;
+    color: var(--color_002);
+}
+
+/* - - - </> [DIV] </> - - - */
+.toggle-wrapper
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* - - - </> [TEXT] </> - - - */
+.toggle-text
+{
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 100%;
+    user-select: none;
+    pointer-events: none;
+    color: var(--color_002);
+}
+
+/* - - - </> [TEXT] </> - - - */
+.toggle-link
+{
+    margin: 0;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 100%;
+    user-select: none;
+    color: var(--color_004);
+}

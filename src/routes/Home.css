@@ -1,0 +1,89 @@
+/* - - - </> [DIV] </> - - - */
+.map
+{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: center;
+    background: #1B1B1B;
+    justify-content: center;
+}
+
+/* - - - </> [DIV] </> - - - */
+.map-wrapper
+{
+    width: 80%;
+    height: 80%;
+    position: absolute;
+}
+
+/* - - - </> [SVG] </> - - - */
+.map-region
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* - - - </> [IMG] </> - - - */
+.map-region-path
+{
+    fill: #1B1B1B;
+    stroke: #FFFFFF;
+    stroke-width: 1.5px;
+    stroke-linejoin: round;
+    transition: .5s ease-in;
+}
+
+/* - - - </> [IMG] </> - - - */
+.map-region-path:hover
+{
+    fill: #FFFFFF;
+    cursor: pointer;
+}
+
+/* - - - </> - - - </> - - - </> [TEXT] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [TEXT] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [TEXT] </> - - - </> - - - </> - - - */
+
+/* - - - </> [DIV] </> - - - */
+.map-region-desc
+{
+    left: 50px;
+    bottom: 50px;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+}
+
+/* - - - </> [DIV] </> - - - */
+.map-region-title
+{
+    margin: 0;
+    z-index: 1;
+    font-size: 60px;
+    color: #FFFFFF;
+    font-weight: 800;
+    user-select: none;
+    line-height: 100%;
+    margin-bottom: 10px;
+    pointer-events: none;
+    font-family: 'Tan-Pearl';
+}
+
+/* - - - </> [DIV] </> - - - */
+.map-region-text
+{
+    margin: 0;
+    z-index: 1;
+    font-size: 20px;
+    color: #FFFFFF;
+    font-weight: 300;
+    user-select: none;
+    line-height: 100%;
+    pointer-events: none;
+}
