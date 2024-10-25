@@ -45,7 +45,7 @@ function Map()
         <div className='main-wrapper'>
             
             {/* - - - </> [MAP] </> - - - */}
-            <LoadScript googleMapsApiKey='AIzaSyDjBY_AhQBJzbKlxA9695hUepkwPQYTYLQ'>
+            <LoadScript googleMapsApiKey='GOOGLE-API-KEY'>
                 
                 {/* - - - </> [MAP] </> - - - */}
                 <GoogleMap mapContainerStyle={{width: '100%', height: '100%'}} center={{lat: Number(currentRegion.region_lat), lng: Number(currentRegion.region_lng)}} zoom={10}>
