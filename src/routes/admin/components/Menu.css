@@ -1,0 +1,160 @@
+/* - - - </> [NAV] </> - - - */
+.menu
+{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* - - - </> [UL] </> - - - */
+.menu-wrapper
+{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* - - - </> [LINE] </> - - - */
+.menu-line
+{
+    margin: 0;
+    width: 80%;
+    user-select: none;
+    pointer-events: none;
+    background: rgb(255, 255, 255, .5);
+}
+
+/* - - - </> [LI] </> - - - */
+.menu-item
+{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    cursor: pointer;
+    position: relative;
+    align-items: center;
+    list-style-type: none;
+    justify-content: center;
+}
+
+/* - - - </> [ICON] </> - - - */
+.menu-item-icon
+{
+    font-size: 20px;
+    user-select: none;
+    margin-right: 20px;
+    pointer-events: none;
+    color: rgb(255, 255, 255, .5);
+}
+
+/* - - - </> [TEXT] </> - - - */
+.menu-item-text
+{
+    margin: 0;
+    width: 75px;
+    font-size: 14px;
+    line-height: 100%;
+    user-select: none;
+    pointer-events: none;
+    color: rgb(255, 255, 255, .5);
+}
+
+/* - - - </> [SPAN] </> - - - */
+.menu-item-active .menu-item-status
+{
+    left: 0;
+    width: 5px;
+    height: 100%;
+    position: absolute;
+    background: var(--color_001);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+/* - - - </> [ICON] </> - - - */
+.menu-item-active .menu-item-icon
+{
+    color: var(--color_001);
+}
+
+/* - - - </> [ICON] </> - - - */
+.menu-item-active .menu-item-text
+{
+    font-weight: 600;
+    color: var(--color_001);
+}
+
+/* - - - </> - - - </> - - - </> [USER] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [USER] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [USER] </> - - - </> - - - </> - - - */
+
+/* - - - </> [LI] </> - - - */
+.menu-item-user
+{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    justify-content: center;
+}
+
+/* - - - </> [SPAN] </> - - - */
+.item-user-wrapper
+{
+    width: 80%;
+    height: 80%;
+    display: flex;
+    border-radius: 8px;
+    align-items: center;
+    background: rgb(255, 255, 255, .3);
+}
+
+/* - - - </> [ICON] </> - - - */
+.item-user-icon
+{
+    font-size: 50px;
+    margin-left: 10px;
+    user-select: none;
+    margin-right: 10px;
+    pointer-events: none;
+    color: var(--color_001);
+}
+
+/* - - - </> [TEXT] </> - - - */
+.item-user-name
+{
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 100%;
+    user-select: none;
+    margin-bottom: 5px;
+    pointer-events: none;
+    color: var(--color_001);
+}
+
+/* - - - </> [TEXT] </> - - - */
+.item-user-desc
+{
+    margin: 0;
+    font-size: 12px;
+    line-height: 100%;
+    user-select: none;
+    font-style: italic;
+    pointer-events: none;
+    color: var(--color_001);
+}

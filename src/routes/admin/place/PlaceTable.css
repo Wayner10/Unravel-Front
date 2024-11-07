@@ -1,0 +1,141 @@
+/* - - - </> [DIV] </> - - - */
+.place-table-wrapper
+{
+    width: 90%;
+    height: 330px;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+/* - - - </> [DIV] </> - - - */
+.place-table-wrapper::-webkit-scrollbar
+{
+    display: none;
+}
+
+/* - - - </> [DIV] </> - - - */
+.place-table
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* - - - </> [DIV] </> - - - */
+.place-table-row
+{
+    width: 100%;
+    display: grid;
+    cursor: pointer;
+    grid-template-columns: repeat(10, 1fr);
+}
+
+/* - - - </> [DIV] </> - - - */
+.place-table-row:nth-child(even)
+{
+    border-radius: 8px;
+    background: var(--color_001);
+}
+
+/* - - - </> [DIV] </> - - - */
+.place-table-col
+{
+    display: flex;
+    padding-top: 15px;
+    align-items: center;
+    padding-bottom: 15px;
+}
+
+/* - - - </> [DIV] </> - - - */
+.place-table-col:nth-child(1)
+{
+    grid-column: 1 / 4;
+}
+
+/* - - - </> [DIV] </> - - - */
+.place-table-col:nth-child(2)
+{
+    grid-column: 4 / 6;
+}
+
+/* - - - </> [DIV] </> - - - */
+.place-table-col:nth-child(3)
+{
+    grid-column: 6 / 8;
+}
+
+/* - - - </> [DIV] </> - - - */
+.place-table-col:nth-child(4)
+{
+    grid-column: 8 / 10;
+}
+
+/* - - - </> [DIV] </> - - - */
+.place-table-col:nth-child(5)
+{
+    grid-column: 10 / 12;
+}
+
+/* - - - </> [ICON] </> - - - */
+.place-table-icon
+{
+    font-size: 15px;
+    user-select: none;
+    margin-right: 10px;
+    color: var(--color_002);
+}
+
+/* - - - </> [ICON] </> - - - */
+.place-table-icon:first-child
+{
+    margin-left: 20px;
+}
+
+/* - - - </> [TEXT] </> - - - */
+.place-table-title
+{
+    margin: 0;
+    width: 150px;
+    font-size: 12px;
+    overflow: hidden;
+    text-align: left;
+    user-select: none;
+    line-height: 100%;
+    white-space: nowrap;
+    color: var(--color_002);
+    text-overflow: ellipsis;
+}
+
+/* - - - </> [TEXT] </> - - - */
+.place-table-text
+{
+    margin: 0;
+    font-size: 12px;
+    user-select: none;
+    line-height: 100%;
+    text-align: center;
+    white-space: nowrap;
+    color: var(--color_002);
+}
+
+/* - - - </> [ICON] </> - - - */
+.place-table-switch-v1
+{
+    font-size: 25px;
+    user-select: none;
+    pointer-events: none;
+    color: var(--color_002);
+}
+
+/* - - - </> [ICON] </> - - - */
+.place-table-switch-v2
+{
+    opacity: .5;
+    font-size: 25px;
+    user-select: none;
+    pointer-events: none;
+    color: var(--color_002);
+    transform: rotate(180deg);
+}

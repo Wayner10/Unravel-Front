@@ -1,0 +1,134 @@
+/* - - - </> [SEC] </> - - - */
+.card-section
+{
+    gap: 20px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* - - - </> [DIV] </> - - - */
+.card
+{
+    margin: 0;
+    width: 33.33%;
+    border-radius: 16px;
+    background: var(--color_002);
+}
+
+/* - - - </> [DIV] </> - - - */
+.card-wrapper
+{
+    margin: 20px;
+}
+
+/* - - - </> [SPAN] </> - - - */
+.card-span:first-child
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* - - - </> [SPAN] </> - - - */
+.card-span:last-child
+{
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: end;
+}
+
+/* - - - </> [ICON] </> - - - */
+.card-icon
+{
+    font-size: 20px;
+    user-select: none;
+    pointer-events: none;
+    color: var(--color_001);
+}
+
+/* - - - </> [TEXT] </> - - - */
+.card-text
+{
+    margin: 0;
+    font-size: 14px;
+    line-height: 100%;
+    margin-left: 10px;
+    user-select: none;
+    pointer-events: none;
+    color: var(--color_001);
+}
+
+/* - - - </> [TEXT] </> - - - */
+.card-title
+{
+    margin: 0;
+    width: 100%;
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 100%;
+    user-select: none;
+    pointer-events: none;
+    color: var(--color_001);
+}
+
+/* - - - </> [TEXT] </> - - - */
+.card-desc
+{
+    margin: 0;
+    font-size: 12px;
+    text-align: right;
+    user-select: none;
+    font-style: italic;
+    margin-right: 10px;
+    pointer-events: none;
+    color: var(--color_001);
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px)
+{
+
+}
+
+/* Medium devices (landscape tablets, 768px and down) */
+@media only screen and (max-width: 768px)
+{
+
+}
+
+/* Large devices (laptops/desktops, 992px and down) */
+@media only screen and (max-width: 992px)
+{
+    /* - - - </> [DIV] </> - - - */
+    .card
+    {
+        width: 100% !important;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and down) */
+@media only screen and (max-width: 1200px)
+{
+    /* - - - </> [SEC] </> - - - */
+    .card-section
+    {
+        flex-wrap: wrap;
+    }
+
+    /* - - - </> [DIV] </> - - - */
+    .card
+    {
+        width: 47.5%;
+    }
+
+    /* - - - </> [DIV] </> - - - */
+    .card:last-child
+    {
+        width: 100%;
+    }
+}
