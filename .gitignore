@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+#ignore ApiKey
+.env
+
 # testing
 /coverage
 
@@ -22,5 +25,3 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-#ignore ApiKey
-.env
