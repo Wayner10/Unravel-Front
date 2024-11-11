@@ -81,11 +81,15 @@ function Region() {
         navigate(`/${region_id}/${place_id}`);
     }    
 
+    //* - - - </> [APY KEY] </> - - - *//
+    const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
+
     return (region) ? (
         <>
             <section className='main-wrapper'>
                 {/* - - - </> [MAP] </> - - - */}
-                <APIProvider apiKey={'AIzaSyAcqW9XalNFFhs7Tv_7yu8lxKg6FMmt-70'}>
+                {/* <APIProvider apiKey={'AIzaSyAcqW9XalNFFhs7Tv_7yu8lxKg6FMmt-70'}> */}
+                <APIProvider apiKey={process.env.REACT_APP_GOOGLE_API_KEY}>
                     <Map mapId={'9f8beaf3893f937e'} defaultCenter={{lat: Number(region.region_lat), lng: Number(region.region_lng)}} defaultZoom={10}>
                         <MapControl position={ControlPosition.CENTER}>
                             {/* - - - </> [ITEM] </> - - - */}
