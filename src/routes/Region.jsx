@@ -110,7 +110,7 @@ function Region()
         <section className='main-wrapper'>
             
             {/* - - - </> [MAP] </> - - - */}
-            <APIProvider apiKey={'AIzaSyCzhE57e20Pm3CttSQIKZwE9Lp0vVXxoOQ'}>
+            <APIProvider apiKey={''}>
 
                 {/* - - - </> [MAP] </> - - - */}
                 <Map mapId={'9f8beaf3893f937e'} defaultCenter={{lat: Number(region.region_lat), lng: Number(region.region_lng)}} defaultZoom={10}>
