@@ -1,40 +1,40 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
 //* - - - </> [DATA] </> - - - *//
-import Places from '../api/Places';
+import Users from '../api/Users';
 
 //* - - - </> [DATA] </> - - - *//
-const placeContext = createContext();
+const userContext = createContext();
 
 //* - - - </> [DATA] </> - - - *//
-export function usePlaceContext()
+export function useUserContext()
 {
-    return useContext(placeContext);
+    return useContext(userContext);
 }
 
 //* - - - </> [DATA] </> - - - *//
-export function PlaceProvider({children})
+export function UserProvider({children})
 {
     //* - - - </> [DATA] </> - - - *//
-    const placeService = new Places();
+    const userService = new Users();
     
     //* - - - </> [DATA] </> - - - *//
-    const [places, setPlaces] = useState([]);
+    const [users, setUsers] = useState([]);
 
     //* - - - </> [DATA] </> - - - *//
     useEffect(() => {
 
-        getPlaces();
+        getUsers();
         
     }, []);
 
     //* - - - </> [GET] </> - - - *//
-    const getPlaces = async () => {
+    const getUsers = async () => {
         try
         {
             //* - - - </> [DATA] </> - - - *//
-            const placeData = await placeService.getPlaces();
-            setPlaces(placeData.data.places);
+            const userData = await userService.getUsers();
+            setUsers(userData.data.users);
         }
         catch (error)
         {
@@ -45,12 +45,12 @@ export function PlaceProvider({children})
     }
 
     //* - - - </> [GET] </> - - - *//
-    const getPlace = async (id) => {
+    const getUser = async (id) => {
         try
         {
             //* - - - </> [DATA] </> - - - *//
-            const placeData = await placeService.getPlace(id);
-            return placeData.data.place;
+            const userData = await userService.getUser(id);
+            return userData.data.user;
         }
         catch (error)
         {
@@ -61,12 +61,12 @@ export function PlaceProvider({children})
     }
 
     //* - - - </> [POST] </> - - - *//
-    const createPlace = async (newPlace) => {
+    const createUser = async (newUser) => {
         try
         {
             //* - - - </> [DATA] </> - - - *//
-            const createdPlace = await placeService.createPlace(newPlace);
-            setPlaces([...places, createdPlace]);
+            const createdUser = await userService.createUser(newUser);
+            setUsers([...users, createdUser]);
         }
         catch (error)
         {
@@ -77,12 +77,12 @@ export function PlaceProvider({children})
     }
 
     //* - - - </> [PUT] </> - - - *//
-    const updatePlace = async (id, updatedData) => {
+    const updateUser = async (id, updatedData) => {
         try
         {
             //* - - - </> [DATA] </> - - - *//
-            await placeService.updatePlace(id, updatedData);
-            setPlaces(places.map(place => place.id === id ? { ...place, ...updatedData } : place));
+            await userService.updateUser(id, updatedData);
+            setUsers(users.map(user => user.id === id ? { ...user, ...updatedData } : user));
         }
         catch (error)
         {
@@ -93,12 +93,12 @@ export function PlaceProvider({children})
     }
 
     //* - - - </> [DELETE] </> - - - *//
-    const deletePlace = async (id) => {
+    const deleteUser = async (id) => {
         try
         {
             //* - - - </> [DATA] </> - - - *//
-            await placeService.deletePlace(id);
-            setPlaces(places.filter(place => place.id !== id));
+            await userService.deleteUser(id);
+            setUsers(users.filter(user => user.id !== id));
         }
         catch (error)
         {
@@ -109,7 +109,7 @@ export function PlaceProvider({children})
     }
     
     //* - - - </> [DATA] </> - - - *//
-    const value = { places, getPlaces, getPlace, createPlace, updatePlace, deletePlace };
+    const value = { users, getUsers, getUser, createUser, updateUser, deleteUser };
     
-    return ( <placeContext.Provider value={value}>{children}</placeContext.Provider> );
+    return ( <userContext.Provider value={value}>{children}</userContext.Provider> );
 }

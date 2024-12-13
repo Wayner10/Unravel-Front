@@ -4,86 +4,378 @@
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100%;
+    height: 90%;
     display: flex;
     overflow: hidden;
     position: relative;
     align-items: center;
-    background: #1B1B1B;
+    background: #F5F5F5;
     justify-content: center;
 }
 
 /* - - - </> [DIV] </> - - - */
 .map-wrapper
 {
-    width: 80%;
-    height: 80%;
-    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 /* - - - </> [SVG] </> - - - */
 .map-region
 {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    right: 0;
+    top: -150px;
+    max-width: 975px;
+    max-height: 1024px;
+    position: absolute;
+    filter: drop-shadow(0px 4px 0px rgb(27, 27, 27));
 }
 
-/* - - - </> [IMG] </> - - - */
+/* - - - </> [SVG] </> - - - */
 .map-region-path
 {
-    fill: #1B1B1B;
-    stroke: #FFFFFF;
-    stroke-width: 1.5px;
-    stroke-linejoin: round;
-    transition: .5s ease-in;
+    transition: .5s;
+    fill: #F5F5F5;
+    user-select: none;
+    filter: drop-shadow(-1px -1px 0px #1B1B1B) drop-shadow(1px -1px 0px #1B1B1B) drop-shadow(1px 1px 0px #1B1B1B) drop-shadow(-1px 1px 0px #1B1B1B);
 }
 
-/* - - - </> [IMG] </> - - - */
+/* - - - </> [SVG] </> - - - */
 .map-region-path:hover
 {
-    fill: #FFFFFF;
     cursor: pointer;
+    transition: .5s;
+    fill-opacity: .8;
 }
 
-/* - - - </> - - - </> - - - </> [TEXT] </> - - - </> - - - </> - - - */
-/* - - - </> - - - </> - - - </> [TEXT] </> - - - </> - - - </> - - - */
-/* - - - </> - - - </> - - - </> [TEXT] </> - - - </> - - - </> - - - */
+/* - - - </> [SVG] </> - - - */
+#path15850 .map-region-path, #path15858 .map-region-path
+{
+    fill-opacity: .8;
+    user-select: none;
+    pointer-events: none;
+}
+
+/* - - - </> - - - </> - - - </> [ABOUT] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [ABOUT] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [ABOUT] </> - - - </> - - - </> - - - */
 
 /* - - - </> [DIV] </> - - - */
-.map-region-desc
+.map-region-video
 {
-    left: 50px;
-    bottom: 50px;
+    top: 40px;
+    right: 40px;
+    position: absolute;
+}
+
+/* - - - </> [SPAN] </> - - - */
+.map-region-video
+{
+    cursor: pointer;
+    transition: .5s;
+    background: var(--color_002);
+}
+
+/* - - - </> [DIV] </> - - - */
+.map-region-country
+{
+    gap: 20px;
+    left: 40px;
+    bottom: 40px;
     display: flex;
     position: absolute;
     flex-direction: column;
 }
 
 /* - - - </> [DIV] </> - - - */
-.map-region-title
+.country-title
 {
     margin: 0;
     z-index: 1;
-    font-size: 60px;
-    color: #FFFFFF;
+    font-size: 80px;
+    color: #1B1B1B;
     font-weight: 800;
     user-select: none;
     line-height: 100%;
-    margin-bottom: 10px;
     pointer-events: none;
     font-family: 'Tan-Pearl';
 }
 
 /* - - - </> [DIV] </> - - - */
-.map-region-text
+.country-item-wrapper
+{
+    gap: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* - - - </> [DIV] </> - - - */
+.country-item
+{
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* - - - </> [SPAN] </> - - - */
+.country-icon-wrapper
+{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    transition: .5s;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    background: var(--color_004);
+}
+
+/* - - - </> [DIV] </> - - - */
+.country-icon
+{
+    font-size: 25px;
+    user-select: none;
+    pointer-events: none;
+    color: var(--color_001);
+}
+
+/* - - - </> [SPAN] </> - - - */
+.country-text-wrapper
+{
+    gap: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* - - - </> [TEXT] </> - - - */
+.country-text
 {
     margin: 0;
-    z-index: 1;
     font-size: 20px;
-    color: #FFFFFF;
-    font-weight: 300;
+    color: #1B1B1B;
+    font-weight: 700;
     user-select: none;
     line-height: 100%;
     pointer-events: none;
+}
+
+/* - - - </> [TEXT] </> - - - */
+.country-desc
+{
+    margin: 0;
+    font-size: 12px;
+    color: #1B1B1B;
+    user-select: none;
+    line-height: 100%;
+    pointer-events: none;
+}
+
+/* - - - </> - - - </> - - - </> [ACTION] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [ACTION] </> - - - </> - - - </> - - - */
+/* - - - </> - - - </> - - - </> [ACTION] </> - - - </> - - - </> - - - */
+
+/* - - - </> [DIV] </> - - - */
+.map-region-action
+{
+    gap: 20px;
+    width: 80%;
+    bottom: 40px;
+    display: none;
+    position: absolute;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* - - - </> [DIV] </> - - - */
+.action-title
+{
+    margin: 0;
+    z-index: 1;
+    width: 100%;
+    font-size: 36px;
+    color: #1B1B1B;
+    font-weight: 800;
+    text-align: left;
+    user-select: none;
+    pointer-events: none;
+    font-family: 'Tan-Pearl';
+}
+
+/* - - - </> [DIV] </> - - - */
+.action-button
+{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    cursor: pointer;
+    transition: .5s;
+    position: relative;
+    border-radius: 8px;
+    align-items: center;
+    color: var(--color_001);
+    justify-content: center;
+}
+
+/* - - - </> [DIV] </> - - - */
+.action-button:first-of-type
+{
+    background: var(--color_004);
+}
+
+/* - - - </> [DIV] </> - - - */
+.action-button:first-of-type:hover
+{
+    transition: .5s;
+    background: var(--color_002);
+}
+
+/* - - - </> [DIV] </> - - - */
+.action-button:last-of-type
+{
+    background: var(--color_002);
+}
+
+/* - - - </> [DIV] </> - - - */
+.action-button:last-of-type:hover
+{
+    transition: .5s;
+    background: var(--color_004);
+}
+
+/* - - - </> [ICON] </> - - - */
+.action-button:first-of-type .action-icon
+{
+    left: 20px;
+    font-size: 25px;
+    user-select: none;
+    position: absolute;
+    pointer-events: none;
+}
+
+/* - - - </> [ICON] </> - - - */
+.action-button:last-of-type .action-icon
+{
+    right: 20px;
+    font-size: 25px;
+    user-select: none;
+    position: absolute;
+    pointer-events: none;
+}
+
+/* - - - </> [TEXT] </> - - - */
+.action-text
+{
+    margin: 0;
+    font-size: 16px;
+    line-height: 100%;
+    user-select: none;
+    pointer-events: none;
+}
+
+/* - - - </> [TEXT] </> - - - */
+.action-copyright
+{
+    margin: 0;
+    font-size: 12px;
+    color: #1B1B1B;
+    user-select: none;
+    line-height: 100%;
+    pointer-events: none;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px)
+{
+    /* - - - </> [SVG] </> - - - */
+    .map-region
+    {
+        top: initial !important;
+    }
+    
+    /* - - - </> - - - </> - - - </> [ABOUT] </> - - - </> - - - </> - - - */
+    /* - - - </> - - - </> - - - </> [ABOUT] </> - - - </> - - - </> - - - */
+    /* - - - </> - - - </> - - - </> [ABOUT] </> - - - </> - - - </> - - - */
+    
+    /* - - - </> [DIV] </> - - - */
+    .map-region-video
+    {
+        display: none;
+    }
+
+    /* - - - </> [DIV] </> - - - */
+    .map-region-country
+    {
+        display: none;
+    }
+
+    /* - - - </> - - - </> - - - </> [ACTION] </> - - - </> - - - </> - - - */
+    /* - - - </> - - - </> - - - </> [ACTION] </> - - - </> - - - </> - - - */
+    /* - - - </> - - - </> - - - </> [ACTION] </> - - - </> - - - </> - - - */
+
+    /* - - - </> [DIV] </> - - - */
+    .map-region-action
+    {
+        display: flex;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and down) */
+@media only screen and (max-width: 768px)
+{
+    /* - - - </> [SVG] </> - - - */
+    .map-region
+    {
+        top: -80px;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and down) */
+@media only screen and (max-width: 992px)
+{
+    /* - - - </> [DIV] </> - - - */
+    .country-title
+    {
+        font-size: 60px;
+    }
+
+    /* - - - </> [DIV] </> - - - */
+    .country-item-wrapper
+    {
+        gap: 40px;
+    }
+
+    /* - - - </> [SPAN] </> - - - */
+    .country-icon-wrapper
+    {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* - - - </> [DIV] </> - - - */
+    .country-icon
+    {
+        font-size: 20px;
+    }
+
+    /* - - - </> [TEXT] </> - - - */
+    .country-text
+    {
+        font-size: 16px;
+    }
+
+    /* - - - </> [TEXT] </> - - - */
+    .country-desc
+    {
+        font-size: 10px;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and down) */
+@media only screen and (max-width: 1200px)
+{
+
 }

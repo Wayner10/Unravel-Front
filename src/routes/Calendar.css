@@ -1,0 +1,112 @@
+/* Calendar.css
+.calendar-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar-modal.open {
+  display: flex;
+}
+
+.calendar-container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+} */
+
+
+/* - - - </> [MODAL BASE] </> - - - */
+.calendar-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+  display: none; /* Por defecto, oculto */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  z-index: 1000; /* Asegura que esté encima de otros elementos */
+}
+
+.calendar-modal.open {
+  display: flex; /* Mostrar modal al agregar la clase .open */
+}
+
+/* - - - </> [CONTENEDOR PRINCIPAL] </> - - - */
+.calendar-container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%; /* Ancho relativo al viewport */
+  max-width: 600px; /* Limitar ancho máximo */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  position: relative; /* Para posicionar el botón de cierre */
+  animation: fadeIn 0.3s ease-out; /* Animación de entrada */
+  overflow: hidden; /* Evitar contenido desbordado */
+}
+
+/* - - - </> [BOTÓN DE CIERRE] </> - - - */
+.close-btn {
+  position: absolute; /* Para colocarlo en una esquina del modal */
+  top: 10px; /* Espaciado desde el borde superior */
+  right: 10px; /* Espaciado desde el borde derecho */
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px; /* Tamaño de texto */
+  border-radius: 4px; /* Bordes redondeados */
+  transition: background 0.2s ease; /* Transición para hover */
+}
+
+.close-btn:hover {
+  background: darkred; /* Cambiar color al pasar el cursor */
+}
+
+/* - - - </> [RESPONSIVIDAD] </> - - - */
+@media (max-width: 768px) {
+  .calendar-container {
+    width: 95%; /* Más ancho en pantallas pequeñas */
+    padding: 15px; /* Menor padding */
+  }
+
+  .close-btn {
+    font-size: 12px; /* Reducir tamaño del texto */
+    padding: 4px 8px; /* Ajustar padding */
+  }
+}
+
+/* - - - </> [ANIMACIONES] </> - - - */
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Comienza invisible */
+    transform: scale(0.9); /* Comienza más pequeño */
+  }
+  to {
+    opacity: 1; /* Totalmente visible */
+    transform: scale(1); /* Tamaño normal */
+  }
+}

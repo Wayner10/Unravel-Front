@@ -11,7 +11,7 @@
 /* - - - </> [DIV] </> - - - */
 .admin-menu
 {
-    width: 15%;
+    width: 100px;
     height: 100%;
     display: flex;
     align-items: center;
@@ -22,22 +22,36 @@
 /* - - - </> [DIV] </> - - - */
 .admin-data
 {
-    width: 60%;
+    width: 70%;
     height: 100%;
     display: flex;
+    overflow-y: auto;
     align-items: center;
     background: #F8F7F2;
+    scrollbar-width: none;
     flex-direction: column;
+}
+
+/* - - - </> [DIV] </> - - - */
+.admin-data::-webkit-scrollbar
+{
+    display: none;
+}
+
+/* - - - </> [DIV] </> - - - */
+.admin-wrapper
+{
+    width: 90%;
 }
 
 /* - - - </> [TEXT] </> - - - */
 .admin-title
 {
     margin: 0;
-    width: 90%;
-    font-size: 28px;
+    width: 100%;
+    font-size: 16px;
     margin-top: 40px;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 100%;
     user-select: none;
     margin-bottom: 10px;
@@ -49,7 +63,7 @@
 .admin-text
 {
     margin: 0;
-    width: 90%;
+    width: 100%;
     opacity: .5;
     font-size: 12px;
     user-select: none;

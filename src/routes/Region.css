@@ -8,7 +8,7 @@
     margin: 0;
     padding: 0;
     width: 100vw;
-    height: 100vh;
+    height: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,7 +21,9 @@
 /* - - - </> [DIV] </> - - - */
 .toggle
 {
+    gap: 5px;
     display: flex;
+    overflow: hidden;
     flex-direction: column;
     justify-content: center;
 }
@@ -30,7 +32,7 @@
 .toggle-title
 {
     margin: 0;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
     line-height: 100%;
     user-select: none;
@@ -41,17 +43,16 @@
 /* - - - </> [SPAN] </> - - - */
 .toggle-span
 {
+    gap: 5px;
     display: flex;
-    margin-bottom: 5px;
     align-items: center;
 }
 
 /* - - - </> [SPAN] </> - - - */
 .toggle-icon
 {
-    font-size: 14px;
+    font-size: 15px;
     user-select: none;
-    margin-right: 5px;
     pointer-events: none;
     color: var(--color_002);
 }
@@ -61,6 +62,7 @@
 {
     width: 100%;
     display: flex;
+    margin-top: 10px;
     align-items: center;
     justify-content: space-between;
 }

@@ -9,7 +9,7 @@ import { Icon } from '@iconify/react';
 import '../../../App.css';
 import './PlaceTable.css';
 
-function PlaceTable({ onEdit })
+function PlaceTable({ onUpdate })
 {
     /* - - - </> [DATA] </> - - - */
     const { places } = usePlaceContext();
@@ -42,7 +42,7 @@ function PlaceTable({ onEdit })
                 {places.map((item, index) => (
 
                     //* - - - </> [DIV] </> - - - *//
-                    <div className='place-table-row' key={index} onClick={() => onEdit(item)}>
+                    <div className='place-table-row' key={index} onClick={() => onUpdate(item)}>
 
                         {/* - - - </> [DIV] </> - - - */}
                         <div className='place-table-col'>

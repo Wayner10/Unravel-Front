@@ -1,18 +1,25 @@
 import React from 'react';
 
 /* - - - </> [LINK] </> - - - */
-import { usePlaceContext } from '../../../context/PlaceProvider';
 import { Icon } from '@iconify/react';
 
 /* - - - </> [LINK] </> - - - */
-import '../../../App.css';
+import '../App.css';
 import './Card.css';
 
 
-function Card()
+function Card({ data })
 {
     /* - - - </> [DATA] </> - - - */
-    const { places } = usePlaceContext();
+    const getStatus = () => {
+        
+        /* - - - </> [DATA] </> - - - */
+        const value = ['user_status', 'place_status'];
+
+        /* - - - </> [DATA] </> - - - */
+        const key = value.find(key => data.some(item => key in item));
+        return key ? `+ ${data.filter(item => item[key] === true).length}` : 'N/A';
+    }
     
     return (
 
@@ -39,7 +46,7 @@ function Card()
                     </span>
 
                     {/* - - - </> [TEXT] </> - - - */}
-                    <p className='card-title'>{`+ ${places.length}`}</p>
+                    <p className='card-title'>{`+ ${data.length}`}</p>
 
                     {/* - - - </> [SPAN] </> - - - */}
                     <span className='card-span'>
@@ -74,7 +81,7 @@ function Card()
                     </span>
 
                     {/* - - - </> [TEXT] </> - - - */}
-                    <p className='card-title'>{`+ ${places.length}`}</p>
+                    <p className='card-title'>{`+ ${data.length}`}</p>
 
                     {/* - - - </> [SPAN] </> - - - */}
                     <span className='card-span'>
@@ -109,8 +116,8 @@ function Card()
                     </span>
 
                     {/* - - - </> [TEXT] </> - - - */}
-                    <p className='card-title'>{`+ ${places.filter(item => item.place_status === true).length}`}</p>
-
+                    <p className='card-title'>{getStatus()}</p>
+                    
                     {/* - - - </> [SPAN] </> - - - */}
                     <span className='card-span'>
 

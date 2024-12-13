@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 
 /* - - - </> [LINK] </> - - - */
-import { usePlaceContext } from '../../../context/PlaceProvider';
+import { useUserContext } from '../../../context/UserProvider';
 
 /* - - - </> [LINK] </> - - - */
 import Menu from '../../../components/Menu';
 import Card from '../../../components/Card';
-import PlaceTable from './PlaceTable';
-import PlaceForm from './PlaceForm';
+import UserTable from './UserTable';
+import UserForm from './UserForm';
 
 /* - - - </> [LINK] </> - - - */
 import '../../../App.css';
 import '../Admin.css';
 
-function Places()
+function Users()
 {
     /* - - - </> [DATA] </> - - - */
-    const { places, createPlace, updatePlace } = usePlaceContext();
+    const { users, createUser, updateUser } = useUserContext();
     
     /* - - - </> [DATA] </> - - - */
     const [data, setData] = useState(null);
@@ -28,26 +28,26 @@ function Places()
     };
     
     /* - - - </> [DATA] </> - - - */
-    const handleUpdate = (place) => {
+    const handleUpdate = (user) => {
         
-        setData(place);
+        setData(user);
     };
     
     /* - - - </> [DATA] </> - - - */
-    const handleSubmit = async (place) => {
+    const handleSubmit = async (user) => {
 
         if (data)
         {
             try
             {
                 //* - - - </> [DATA] </> - - - *//
-                await updatePlace(place.place_id, place);
+                await updateUser(user.user_id, user);
                 window.location.reload();
             }
             catch (error)
             {
                 //* - - - </> [ERROR] </> - - - *//
-                console.error("Error updating place", error);
+                console.error("Error updating user", error);
             }
         }
         else
@@ -55,13 +55,13 @@ function Places()
             try
             {
                 //* - - - </> [DATA] </> - - - *//
-                await createPlace(place);
+                await createUser(user);
                 window.location.reload();
             }
             catch (error)
             {
                 //* - - - </> [ERROR] </> - - - *//
-                console.error("Error creating place", error);
+                console.error("Error creating user", error);
             }
         }
         setData(null);
@@ -89,13 +89,13 @@ function Places()
                 <div className='admin-wrapper'>
 
                     {/* - - - </> [TEXT] </> - - - */}
-                    <p className='admin-title'>+ Unravel - Points of Interest</p>
+                    <p className='admin-title'>+ Unravel - Users</p>
 
                     {/* - - - </> [TEXT] </> - - - */}
                     <p className='admin-text'>Find out what's happening</p>
-                    
+
                     {/* - - - </> [DATA] </> - - - */}
-                    <Card data={places}></Card>
+                    <Card data={users}></Card>
 
                     {/* - - - </> [TEXT] </> - - - */}
                     <p className='admin-title'>+ Records</p>
@@ -104,24 +104,25 @@ function Places()
                     <p className='admin-text'>Manage database records</p>
 
                     {/* - - - </> [DATA] </> - - - */}
-                    <PlaceTable onUpdate={handleUpdate}></PlaceTable>
-                    
+                    <UserTable onUpdate={handleUpdate}></UserTable>
+
                 </div>
-                
+
             </div>
 
             {/* - - - </> [DIV] </> - - - */}
             <div className='admin-form'>
                 
                 {/* - - - </> [FORM] </> - - - */}
-                <PlaceForm initialValues={data} onCreate={handleCreate} onSubmit={handleSubmit}></PlaceForm>
-
+                <UserForm initialValues={data} onCreate={handleCreate} onSubmit={handleSubmit}></UserForm>
+                
             </div>
 
         </section>
 
         </>
+
     );
 }
 
-export default Places;
+export default Users;

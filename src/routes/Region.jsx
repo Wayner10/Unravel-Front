@@ -1,23 +1,25 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 
 /* - - - </> [LINK] </> - - - */
 import { APIProvider, Map, MapControl, ControlPosition, AdvancedMarker, InfoWindow } from '@vis.gl/react-google-maps';
 import { useRegionContext } from '../context/RegionProvider';
 import { usePlaceContext } from '../context/PlaceProvider';
-import { useTypeContext } from '../context/TypeProvider';
+
 import { useNavigate, useParams } from 'react-router-dom';
 import { Icon } from '@iconify/react';
 
 /* - - - </> [LINK] </> - - - */
+import Navigation from '../components/Navigation';
+import Sidebar from '../components/Sidebar';
 import '../App.css';
 import './Region.css';
 
-function Region() {
+function Region()
+{
     /* - - - </> [DATA] </> - - - */
     const { id } = useParams();
 
     /* - - - </> [DATA] </> - - - */
-    const types = useTypeContext();
     const { places } = usePlaceContext();
     const { getRegion } = useRegionContext();
 
@@ -27,40 +29,49 @@ function Region() {
     /* - - - </> [DATA] </> - - - */
     const [toggle, setToggle] = useState(null);
     const [region, setRegion] = useState(null);
-    const [currentPlaces, setCurrentPlaces] = useState([]);
+    const [currentPlaces, setCurrentPlaces] = useState(null);
 
-    /* - - - </> [DATA] </> - - - */
-    const fetchRegion = useCallback(async (id) => {
-        try {
+    //* - - - </> [DATA] </> - - - *//
+    const fetchRegion = async (id) => {
+        try
+        {
+            //* - - - </> [DATA] </> - - - *//
             const data = await getRegion(id);
             setRegion(data);
-        } catch (error) {
+        }
+        catch (error)
+        {
+            //* - - - </> [ERROR] </> - - - *//
             console.log(error);
             throw error;
         }
-    }, [getRegion]); // Ensure getRegion is stable
-
+    }
+    
     /* - - - </> [DATA] </> - - - */
     useEffect(() => {
-        fetchRegion(id);
-        
-        if (places) {
-            // setCurrentPlaces(places.filter(item => item.region_id === parseInt(id)));
 
-            const filtered = places.filter(item => item.region_id === parseInt(id));
-            setCurrentPlaces(filtered.filter(item => item.place_status === true))
+        fetchRegion(id);
+
+        if (places)
+        {
+            /* - - - </> [DATA] </> - - - */
+            setCurrentPlaces(places.filter(item => item.region_id === parseInt(id)));
         }
 
-    }, [fetchRegion, places, id]); // Added fetchRegion to dependencies
+    }, [places, id]);
 
     /* - - - </> [DATA] </> - - - */
-    function getImages(src) {
+    function getImages(src)
+    {
         let images = {};
-        try {
-            src.keys().forEach((item) => {
-                images[item.replace("./", "")] = src(item);
-            });
-        } catch (error) {
+        try
+        {
+            /* - - - </> [DATA] </> - - - */
+            src.keys().map((item) => { images[item.replace("./", "")] = src(item); });
+        }
+        catch (error)
+        {
+            /* - - - </> [DATA] </> - - - */
             console.error("Error importing icons:", error);
         }
         return images;
@@ -71,76 +82,120 @@ function Region() {
 
     /* - - - </> [DATA] </> - - - */
     const setCoordinates = (lat, lng) => {
+
+        /* - - - </> [DATA] </> - - - */
         const setLat = Number.isFinite(lat) && lat >= -90 && lat <= 90;
         const setLng = Number.isFinite(lng) && lng >= -180 && lng <= 180;
+
         return setLat && setLng;
     }
 
     //* - - - </> [LINK] </> - - - *//
     const seeMore = (region_id, place_id) => {
+
         navigate(`/${region_id}/${place_id}`);
-    }    
-
-    //* - - - </> [APY KEY] </> - - - *//
-    const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
-
+    }
+    
     return (region) ? (
+
         <>
-            <section className='main-wrapper'>
+        
+        {/* - - - </> [NAV] </> - - - */}
+        <Navigation></Navigation>
+
+        {/* - - - </> [SEC] </> - - - */}
+        <Sidebar></Sidebar>
+
+        {/* - - - </> [SEC] </> - - - */}
+        <section className='main-wrapper'>
+            
+            {/* - - - </> [MAP] </> - - - */}
+            <APIProvider apiKey={'AIzaSyCzhE57e20Pm3CttSQIKZwE9Lp0vVXxoOQ'}>
+
                 {/* - - - </> [MAP] </> - - - */}
-                <APIProvider apiKey={process.env.REACT_APP_GOOGLE_API_KEY}>
-                    <Map mapId={'9f8beaf3893f937e'} defaultCenter={{lat: Number(region.region_lat), lng: Number(region.region_lng)}} defaultZoom={10}>
-                        <MapControl position={ControlPosition.CENTER}>
-                            {/* - - - </> [ITEM] </> - - - */}
-                            {currentPlaces && currentPlaces.map((item) => {
-                                if (setCoordinates(Number(item.place_lat), Number(item.place_lng)) && item.region_id === region.region_id) {
-                                    return (
-                                        <AdvancedMarker 
-                                            key={item.place_id} 
-                                            position={{lat: Number(item.place_lat), lng: Number(item.place_lng)}} 
-                                            title={item.place_name} 
-                                            onClick={() => setToggle(item)}
-                                        >
-                                            <img 
-                                                src={images[`${types.find(type => type.place_type_id === item.place_type_id)?.place_type_desc.toLowerCase()}.svg`]} 
-                                                width={30} 
-                                                height={30} 
-                                                alt={item.place_name}
-                                            />
-                                        </AdvancedMarker>
-                                    );
-                                }
-                                return null; // Return null if the condition is not met
-                            })}
-                            {toggle && (
-                                <InfoWindow 
-                                    position={{lat: Number(toggle.place_lat), lng: Number(toggle.place_lng)}} 
-                                    headerContent={<p className='toggle-title'>{toggle.place_name}</p>} 
-                                    onCloseClick={() => setToggle(null)}
-                                >
-                                    <div className='toggle'>
+                <Map mapId={'9f8beaf3893f937e'} defaultCenter={{lat: Number(region.region_lat), lng: Number(region.region_lng)}} defaultZoom={10}>
+
+                    {/* - - - </> [MAP] </> - - - */}
+                    <MapControl position={ControlPosition.CENTER}>
+
+                        {/* - - - </> [ITEM] </> - - - */}
+                        {currentPlaces && currentPlaces.map((item) => {
+
+                            /* - - - </> [ITEM] </> - - - */
+                            if(setCoordinates(Number(item.place_lat), Number(item.place_lng)) && item.region_id === region.region_id && item.place_status === true)
+                            {
+                                return (
+
+                                    /* - - - </> [ITEM] </> - - - */
+                                    <AdvancedMarker key={item.place_id} position={{lat: Number(item.place_lat), lng: Number(item.place_lng)}} title={item.place_name} onClick={() => setToggle(item)}>
+
+                                        {/* - - - </> [ITEM] </> - - - */}
+                                        <img src={images[`${item.place_icon}.svg`]} width={30} height={30} alt={item.place_name}/>
+
+                                    </AdvancedMarker>
+                                )
+                            }
+                        
+                        })}
+
+                        {toggle && (
+
+                            <InfoWindow position={{lat: Number(toggle.place_lat), lng: Number(toggle.place_lng)}} headerContent={<p className='toggle-title'>{toggle.place_name}</p>} onCloseClick={() => setToggle(null)}>
+
+                                {/* - - - </> [DIV] </> - - - */}
+                                <div className='toggle'>
+
+                                    {/* - - - </> [SPAN] </> - - - */}
+                                    <span className='toggle-span'>
+                                        
+                                        {/* - - - </> [TEXT] </> - - - */}
+                                        <p className='toggle-text'>{toggle.place_feature}</p>
+
+                                        {/* - - - </> [ICON] </> - - - */}
+                                        <Icon icon="ph:seal-check-fill" className='toggle-icon'/>
+
+                                    </span>
+
+                                    {/* - - - </> [TEXT] </> - - - */}
+                                    <p className='toggle-text'>{toggle.place_desc_short} ...</p>
+
+                                    {/* - - - </> [DIV] </> - - - */}
+                                    <div className='toggle-wrapper'>
+
+                                        {/* - - - </> [TEXT] </> - - - */}
+                                        <p className='toggle-link' onClick={() => seeMore(region.region_id, toggle.place_id)}>See more</p>
+                                        
+                                        {/* - - - </> [SPAN] </> - - - */}
                                         <span className='toggle-span'>
-                                            <Icon icon="fluent:location-12-filled" className='toggle-icon'/>
-                                            <p className='toggle-text'>{toggle.place_canton}, {toggle.place_nearest_city}</p>
+                                            
+                                            {/* - - - </> [ICON] </> - - - */}
+                                            <Icon icon="bi:star-fill" className='toggle-icon'/>
+                                            
+                                            {/* - - - </> [TEXT] </> - - - */}
+                                            <p className='toggle-text'>{toggle.place_score}</p>
+
                                         </span>
-                                        <div className='toggle-wrapper'>
-                                            <p className='toggle-link' onClick={() => seeMore(region.region_id, toggle.place_id)}>See more</p>
-                                            <span className='toggle-span'>
-                                                <Icon icon="bi:star-fill" className='toggle-icon'/>
-                                                <p className='toggle-text'>{toggle.place_score}</p>
-                                            </span>
-                                        </div>
+                                        
                                     </div>
-                                </InfoWindow>
-                            )}
-                        </MapControl>
-                    </Map>
-                </APIProvider>
-            </section>
+
+
+                                </div>
+
+                            </InfoWindow>
+                        
+                        )}
+
+                    </MapControl>
+
+                </Map>
+
+            </APIProvider>
+
+        </section>
+        
         </>
-    ) : (
-        <section className='main-wrapper'>Loading...</section>
-    );
+
+    ) : ( <section className='main-wrapper'>Loading...</section> );
 }
 
 export default Region;

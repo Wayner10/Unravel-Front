@@ -5,7 +5,7 @@ import { Icon } from '@iconify/react';
 import '../../../App.css';
 import './PlaceForm.css';
 
-function PlaceForm({ initialValues, onSubmit })
+function PlaceForm({ initialValues, onCreate, onSubmit })
 {
     //* - - - </> [DATA] </> - - - *//
     const values = {
@@ -15,10 +15,10 @@ function PlaceForm({ initialValues, onSubmit })
         place_score: '',
         place_email: '',
         place_phone: '',
-        place_lat: '',
-        place_lng: '',
         place_price_adult: '',
         place_price_child: '',
+        place_lat: '',
+        place_lng: '',
         place_waze_url: '',
         place_page_url: '',
         place_opening: '',
@@ -56,8 +56,8 @@ function PlaceForm({ initialValues, onSubmit })
         var regexPattern = new RegExp('true');
         setData((prev) => ({...prev, [name]: (value === 'true' || value === 'false') ? regexPattern.test(value) : value,}));
         if (name === 'place_icon') { setIcon(value) }
-    };
-
+    }
+    
     //* - - - </> [DATA] </> - - - *//
     const handleSubmit = (e) => {
 
@@ -70,6 +70,7 @@ function PlaceForm({ initialValues, onSubmit })
 
         setData(values);
         setIcon(null);
+        onCreate();
     }
 
     /* - - - </> [DATA] </> - - - */
@@ -102,7 +103,7 @@ function PlaceForm({ initialValues, onSubmit })
         <form className='form-wrapper' onSubmit={handleSubmit}>
 
             {/* - - - </> [TEXT] </> - - - */}
-            <p className='form-title'>+ New item</p>
+            <p className='form-title'>+ New Point of Interest</p>
 
             {/* - - - </> [TEXT] </> - - - */}
             <p className='form-text'>Complete the required fields to add a new record. Use the format indicated for each data</p>
@@ -129,7 +130,7 @@ function PlaceForm({ initialValues, onSubmit })
                     value={data.place_name || ''}
 
                     //* - - - </> [VALUE] </> - - - *//
-                    pattern='^[A-Za-z0-9](?:[A-Za-z0-9 ]{1,25}[A-Za-z0-9])?$'
+                    pattern='^[A-Za-z0-9](?:[A-Za-z0-9 ]{3,48}[A-Za-z0-9])?$'
                     
                     //* - - - </> [VALUE] </> - - - *//
                     className='form-input'
@@ -169,7 +170,7 @@ function PlaceForm({ initialValues, onSubmit })
                     value={data.place_desc_short || ''}
 
                     //* - - - </> [VALUE] </> - - - *//
-                    pattern='^[A-Za-z0-9](?:[A-Za-z0-9 ]{1,255}[A-Za-z0-9])?$'
+                    pattern='^[A-Za-z0-9](?:[A-Za-z0-9 ]{3,253}[A-Za-z0-9])?$'
                     
                     //* - - - </> [VALUE] </> - - - *//
                     className='form-input'
@@ -212,7 +213,7 @@ function PlaceForm({ initialValues, onSubmit })
                     value={data.place_desc_large || ''}
 
                     //* - - - </> [VALUE] </> - - - *//
-                    pattern='^[A-Za-z0-9][A-Za-z0-9 ]*[A-Za-z0-9]$'
+                    pattern='^[A-Za-z0-9][A-Za-z0-9 ]{48,}[A-Za-z0-9]$'
                     
                     //* - - - </> [VALUE] </> - - - *//
                     className='form-input'
@@ -244,12 +245,12 @@ function PlaceForm({ initialValues, onSubmit })
                     
                     //* - - - </> [VALUE] </> - - - *//
                     name='place_score'
-
+                    
                     //* - - - </> [VALUE] </> - - - *//
                     value={data.place_score || ''}
-
+                    
                     //* - - - </> [VALUE] </> - - - *//
-                    pattern='^(?:[0-4](?:\.[0-9])?|5(?:.0)?)$'
+                    min={'0'} max={'5'} step={'0.1'}
                     
                     //* - - - </> [VALUE] </> - - - *//
                     className='form-input'
@@ -287,9 +288,6 @@ function PlaceForm({ initialValues, onSubmit })
 
                     //* - - - </> [VALUE] </> - - - *//
                     value={data.place_email || ''}
-
-                    //* - - - </> [VALUE] </> - - - *//
-                    pattern='^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$'
                     
                     //* - - - </> [VALUE] </> - - - *//
                     className='form-input'
@@ -336,86 +334,6 @@ function PlaceForm({ initialValues, onSubmit })
                     
                     //* - - - </> [VALUE] </> - - - *//
                     placeholder='Ex. (+506) 5505-5050'
-                    
-                    //* - - - </> [VALUE] </> - - - *//
-                    onChange={handleChange}
-                    
-                    //* - - - </> [VALUE] </> - - - *//
-                    required
-
-                />
-
-            </div>
-
-            {/* - - - </> [TAG] </> - - - */}
-            <label className='form-label'>Place latitude</label>
-
-            {/* - - - </> [DIV] </> - - - */}
-            <div className='form-input-wrapper'>
-
-                {/* - - - </> [ICON] </> - - - */}
-                <Icon icon="ic:baseline-gps-fixed" className='form-input-icon'/>
-
-                {/* - - - </> [INPUT] </> - - - */}
-                <input
-                
-                    //* - - - </> [VALUE] </> - - - *//
-                    type='text'
-                    
-                    //* - - - </> [VALUE] </> - - - *//
-                    name='place_lat'
-
-                    //* - - - </> [VALUE] </> - - - *//
-                    value={data.place_lat || ''}
-
-                    //* - - - </> [VALUE] </> - - - *//
-                    pattern='^-?([1-8]?[0-9]|90)(.\d+)?$'
-                    
-                    //* - - - </> [VALUE] </> - - - *//
-                    className='form-input'
-                    
-                    //* - - - </> [VALUE] </> - - - *//
-                    placeholder='Ex. 9.876543'
-                    
-                    //* - - - </> [VALUE] </> - - - *//
-                    onChange={handleChange}
-                    
-                    //* - - - </> [VALUE] </> - - - *//
-                    required
-
-                />
-
-            </div>
-
-            {/* - - - </> [TAG] </> - - - */}
-            <label className='form-label'>Place longitude</label>
-
-            {/* - - - </> [DIV] </> - - - */}
-            <div className='form-input-wrapper'>
-
-                {/* - - - </> [ICON] </> - - - */}
-                <Icon icon="ic:baseline-gps-fixed" className='form-input-icon'/>
-
-                {/* - - - </> [INPUT] </> - - - */}
-                <input
-                
-                    //* - - - </> [VALUE] </> - - - *//
-                    type='text'
-                    
-                    //* - - - </> [VALUE] </> - - - *//
-                    name='place_lng'
-
-                    //* - - - </> [VALUE] </> - - - *//
-                    value={data.place_lng || ''}
-
-                    //* - - - </> [VALUE] </> - - - *//
-                    pattern='^-?((1[0-7][0-9])|([1-9]?[0-9]))(.\d+)?$'
-                    
-                    //* - - - </> [VALUE] </> - - - *//
-                    className='form-input'
-                    
-                    //* - - - </> [VALUE] </> - - - *//
-                    placeholder='Ex. -9.345678'
                     
                     //* - - - </> [VALUE] </> - - - *//
                     onChange={handleChange}
@@ -508,6 +426,86 @@ function PlaceForm({ initialValues, onSubmit })
             </div>
 
             {/* - - - </> [TAG] </> - - - */}
+            <label className='form-label'>Place latitude</label>
+
+            {/* - - - </> [DIV] </> - - - */}
+            <div className='form-input-wrapper'>
+
+                {/* - - - </> [ICON] </> - - - */}
+                <Icon icon="ic:baseline-gps-fixed" className='form-input-icon'/>
+
+                {/* - - - </> [INPUT] </> - - - */}
+                <input
+                
+                    //* - - - </> [VALUE] </> - - - *//
+                    type='text'
+                    
+                    //* - - - </> [VALUE] </> - - - *//
+                    name='place_lat'
+
+                    //* - - - </> [VALUE] </> - - - *//
+                    value={data.place_lat || ''}
+
+                    //* - - - </> [VALUE] </> - - - *//
+                    pattern='^-?([1-8]?[0-9]|90)(.\d+)?$'
+                    
+                    //* - - - </> [VALUE] </> - - - *//
+                    className='form-input'
+                    
+                    //* - - - </> [VALUE] </> - - - *//
+                    placeholder='Ex. 9.876543'
+                    
+                    //* - - - </> [VALUE] </> - - - *//
+                    onChange={handleChange}
+                    
+                    //* - - - </> [VALUE] </> - - - *//
+                    required
+
+                />
+
+            </div>
+
+            {/* - - - </> [TAG] </> - - - */}
+            <label className='form-label'>Place longitude</label>
+
+            {/* - - - </> [DIV] </> - - - */}
+            <div className='form-input-wrapper'>
+
+                {/* - - - </> [ICON] </> - - - */}
+                <Icon icon="ic:baseline-gps-fixed" className='form-input-icon'/>
+
+                {/* - - - </> [INPUT] </> - - - */}
+                <input
+                
+                    //* - - - </> [VALUE] </> - - - *//
+                    type='text'
+                    
+                    //* - - - </> [VALUE] </> - - - *//
+                    name='place_lng'
+
+                    //* - - - </> [VALUE] </> - - - *//
+                    value={data.place_lng || ''}
+
+                    //* - - - </> [VALUE] </> - - - *//
+                    pattern='^-?((1[0-7][0-9])|([1-9]?[0-9]))(.\d+)?$'
+                    
+                    //* - - - </> [VALUE] </> - - - *//
+                    className='form-input'
+                    
+                    //* - - - </> [VALUE] </> - - - *//
+                    placeholder='Ex. -9.345678'
+                    
+                    //* - - - </> [VALUE] </> - - - *//
+                    onChange={handleChange}
+                    
+                    //* - - - </> [VALUE] </> - - - *//
+                    required
+
+                />
+
+            </div>
+            
+            {/* - - - </> [TAG] </> - - - */}
             <label className='form-label'>Place waze</label>
 
             {/* - - - </> [DIV] </> - - - */}
@@ -527,9 +525,6 @@ function PlaceForm({ initialValues, onSubmit })
 
                     //* - - - </> [VALUE] </> - - - *//
                     value={data.place_waze_url || ''}
-
-                    //* - - - </> [VALUE] </> - - - *//
-                    pattern='^(https?|ftp)://[^\s/$.?#].[^\s]*$'
                     
                     //* - - - </> [VALUE] </> - - - *//
                     className='form-input'
@@ -567,9 +562,6 @@ function PlaceForm({ initialValues, onSubmit })
 
                     //* - - - </> [VALUE] </> - - - *//
                     value={data.place_page_url || ''}
-
-                    //* - - - </> [VALUE] </> - - - *//
-                    pattern='^(https?|ftp)://[^\s/$.?#].[^\s]*$'
                     
                     //* - - - </> [VALUE] </> - - - *//
                     className='form-input'
@@ -594,7 +586,7 @@ function PlaceForm({ initialValues, onSubmit })
             <div className='form-input-wrapper'>
 
                 {/* - - - </> [ICON] </> - - - */}
-                <Icon icon="ri:pencil-fill" className='form-input-icon'/>
+                <Icon icon="mdi:calendar" className='form-input-icon'/>
 
                 {/* - - - </> [INPUT] </> - - - */}
                 <input
@@ -609,7 +601,7 @@ function PlaceForm({ initialValues, onSubmit })
                     value={data.place_opening || ''}
 
                     //* - - - </> [VALUE] </> - - - *//
-                    pattern='^(Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday)$'
+                    pattern='^(m|M)(o|O)(n|N)(d|D)(a|A)(y|Y)|(t|T)(u|U)(e|E)(s|S)(d|D)(a|A)(y|Y)|(w|W)(e|E)(d|D)(n|N)(e|E)(s|S)(d|D)(a|A)(y|Y)|(t|T)(h|H)(u|U)(r|R)(s|S)(d|D)(a|A)(y|Y)|(f|F)(r|R)(i|I)(d|D)(a|A)(y|Y)|(s|S)(a|A)(t|T)(u|U)(r|R)(d|D)(a|A)(y|Y)|(s|S)(u|U)(n|N)(d|D)(a|A)(y|Y)$'
                     
                     //* - - - </> [VALUE] </> - - - *//
                     className='form-input'
@@ -634,7 +626,7 @@ function PlaceForm({ initialValues, onSubmit })
             <div className='form-input-wrapper'>
 
                 {/* - - - </> [ICON] </> - - - */}
-                <Icon icon="ri:pencil-fill" className='form-input-icon'/>
+                <Icon icon="mdi:calendar" className='form-input-icon'/>
 
                 {/* - - - </> [INPUT] </> - - - */}
                 <input
@@ -649,7 +641,7 @@ function PlaceForm({ initialValues, onSubmit })
                     value={data.place_closing || ''}
 
                     //* - - - </> [VALUE] </> - - - *//
-                    pattern='^(Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday)$'
+                    pattern='^(m|M)(o|O)(n|N)(d|D)(a|A)(y|Y)|(t|T)(u|U)(e|E)(s|S)(d|D)(a|A)(y|Y)|(w|W)(e|E)(d|D)(n|N)(e|E)(s|S)(d|D)(a|A)(y|Y)|(t|T)(h|H)(u|U)(r|R)(s|S)(d|D)(a|A)(y|Y)|(f|F)(r|R)(i|I)(d|D)(a|A)(y|Y)|(s|S)(a|A)(t|T)(u|U)(r|R)(d|D)(a|A)(y|Y)|(s|S)(u|U)(n|N)(d|D)(a|A)(y|Y)$'
                     
                     //* - - - </> [VALUE] </> - - - *//
                     className='form-input'
@@ -862,22 +854,22 @@ function PlaceForm({ initialValues, onSubmit })
                     <option value="" className='form-input-option' disabled>Choose an option...</option>
                     
                     {/* - - - </> [ITEM] </> - - - */}
-                    <option value={1} className='form-input-option'>Chorotega</option>
+                    <option value={1} className='form-input-option'>Nicoya Peninsula</option>
 
                     {/* - - - </> [ITEM] </> - - - */}
-                    <option value={2} className='form-input-option'>Huetar North</option>
+                    <option value={2} className='form-input-option'>Northen Plains</option>
 
                     {/* - - - </> [ITEM] </> - - - */}
-                    <option value={3} className='form-input-option'>Huetar Atlantic</option>
+                    <option value={3} className='form-input-option'>Caribbean</option>
 
                     {/* - - - </> [ITEM] </> - - - */}
                     <option value={4} className='form-input-option'>Central Pacific</option>
 
                     {/* - - - </> [ITEM] </> - - - */}
-                    <option value={5} className='form-input-option'>Central</option>
+                    <option value={5} className='form-input-option'>Central Valley</option>
 
                     {/* - - - </> [ITEM] </> - - - */}
-                    <option value={6} className='form-input-option'>Brunca</option>
+                    <option value={6} className='form-input-option'>Osa Peninsula</option>
 
                 </select>
 

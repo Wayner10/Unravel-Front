@@ -1,14 +1,14 @@
 import axios from 'axios';
 
-export default class Types
+export default class Users
 {
     //* - - - </> [GET] </> - - - *//
-    async getTypes()
+    async getUsers()
     {
         try
         {
             //* - - - </> [URL] </> - - - *//
-            const { data } = (await axios.get('http://localhost:4000/api/v1/place-types'));
+            const { data } = (await axios.get('http://localhost:4000/api/v1/users'));
             return data;
         }
         catch (error)
@@ -20,12 +20,12 @@ export default class Types
     }
 
     //* - - - </> [GET] </> - - - *//
-    async getType(id)
+    async getUser(id)
     {
         try
         {
             //* - - - </> [URL] </> - - - *//
-            const { data } = await axios.get(`http://localhost:4000/api/v1/place-types/${id}`);
+            const { data } = await axios.get(`http://localhost:4000/api/v1/users/${id}`);
             return data;
         }
         catch (error)
@@ -37,12 +37,12 @@ export default class Types
     }
 
     //* - - - </> [POST] </> - - - *//
-    async createType(data)
+    async createUser(data)
     {
         try
         {
             //* - - - </> [URL] </> - - - *//
-            const response = await axios.post('http://localhost:4000/api/v1/place-types', data);
+            const response = await axios.post('http://localhost:4000/api/v1/users', data);
             console.log(response);
             return response.data;
         }
@@ -55,12 +55,12 @@ export default class Types
     }
 
     //* - - - </> [PUT] </> - - - *//
-    async updateType(id, data)
+    async updateUser(id, data)
     {
         try
         {
             //* - - - </> [URL] </> - - - *//
-            await axios.put(`http://localhost:4000/api/v1/place-types/${id}`, data);
+            await axios.put(`http://localhost:4000/api/v1/users/${id}`, data);
             return {status: 200, message: 'Content updated successfully!'};
         }
         catch(error)
@@ -72,12 +72,12 @@ export default class Types
     }
 
     //* - - - </> [DELETE] </> - - - *//
-    async deleteType(id)
+    async deleteUser(id)
     {
         try
         {
             //* - - - </> [URL] </> - - - *//
-            await axios.delete(`http://localhost:4000/api/v1/place-types/${id}`);
+            await axios.delete(`http://localhost:4000/api/v1/users/${id}`);
             return {status: 200, message: 'Content removed successfully!'};
         }
         catch(error)

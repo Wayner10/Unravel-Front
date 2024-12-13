@@ -1,0 +1,85 @@
+/* - - - </> [NAV] </> - - - */
+.navigation
+{
+    margin: 0;
+    z-index: 1;
+    padding: 0;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    background: var(--color_001);
+    filter: drop-shadow(0px 5px 5px rgb(27, 27, 27, .1));
+}
+
+/* - - - </> [UL] </> - - - */
+.navigation-wrapper
+{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    padding: 0px 80px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* - - - </> [LI] </> - - - */
+.navigation-item
+{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    justify-content: center;
+}
+
+/* - - - </> [ICON] </> - - - */
+.navigation-item-logo
+{
+    height: 30px;
+    cursor: pointer;
+    user-select: none;
+    color: var(--color_002);
+}
+
+/* - - - </> [ICON] </> - - - */
+.navigation-item-icon
+{
+    cursor: pointer;
+    font-size: 20px;
+    user-select: none;
+    color: var(--color_002);
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px)
+{
+    
+}
+
+/* Medium devices (landscape tablets, 768px and down) */
+@media only screen and (max-width: 768px)
+{
+    /* - - - </> [UL] </> - - - */
+    .navigation-wrapper
+    {
+        padding: 0px 40px;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and down) */
+@media only screen and (max-width: 992px)
+{
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and down) */
+@media only screen and (max-width: 1200px)
+{
+
+}
